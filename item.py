@@ -34,7 +34,6 @@ class Item(object):
         :param market_hash_name: The item market hash name
         :raises (ApiDoesntReturnNeededParameterException, UnknownSteamErrorException)
         """
-        # TODO: 正常情况下物品的发行商费率放在descriptions里，如果没有则按照默认10%计算
         self.appid: int = appid
         self.contextid: str = contextid
         self.assetid: str = assetid

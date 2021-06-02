@@ -115,4 +115,4 @@ dmypy.json
 
 .idea/
 .DS_Store
-
+config.json

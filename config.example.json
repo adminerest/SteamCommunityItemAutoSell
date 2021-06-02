@@ -1,0 +1,43 @@
+{
+    "debug": false,
+    "language": "english",
+    "steam_login_secure": "",
+    "steam_id": "",
+    "allow_to_sell_item": {
+        "enable": true,
+        "item_type": []
+    },
+    "disallow_to_sell_item" : {
+        "enable": false,
+        "item_type": []
+    },
+    "allow_to_sell_item_detail": {
+        "enable": false,
+        "item_detail_type": []
+    },
+    "disallow_to_sell_item_detail": {
+        "enable": false,
+        "item_detail_type": []
+    },
+    "price_setting": {
+        "lowest_price": null,
+        "highest_price": null,
+        "calculation_formula": "",
+        "least_sells_hours": 36,
+        "hours_least_sells": 25,
+        "least_sell_orders": 20,
+        "least_buy_orders": 0,
+        "normal_card": {
+            "lowest_price": null,
+            "highest_price": null
+        },
+        "foil_card": {
+            "lowest_price": null,
+            "highest_price": null
+        },
+        "other_item": {
+            "lowest_price": null,
+            "highest_price": null
+        }
+    }
+}

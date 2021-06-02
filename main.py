@@ -49,7 +49,6 @@ def start() -> None:
             logger.info(
                 "Item: %s, Asset ID: %s can't be sold Reason: not allowed in config" % (item.market_hash_name,
                                                                                         item.assetid))
-            # print(item.price.sell_price)
     logger.info("Total listed %d items" % total_sales)
 
 
