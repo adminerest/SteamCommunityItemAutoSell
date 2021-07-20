@@ -1,3 +1,4 @@
+import re
 from typing import Dict, Union
 from json import loads
 from os.path import dirname
@@ -5,6 +6,7 @@ from os.path import dirname
 
 class Config(object):
     debug: bool = False  # Enable debug log
+    proxy: Dict = {}  # Set proxy
     mobile_confirmation: bool = False  # Need mobile confirmation after list on market
     language: str = 'english'  # !important the language user preferred
     steam_login_secure: str = None  # The steam website cookie
@@ -34,7 +36,7 @@ class Config(object):
         'least_sells_hours': 36,  # In least_sells_hours must have hours_least_sells
         'hours_least_sells': 25,  # In least_sells_hours must have hours_least_sells
         'least_sell_orders': 20,  # The item must have least_sell_orders sell orders now
-        'least_buy_orders': 0,    # The item must have least_buy_orders buy orders now
+        'least_buy_orders': 0,  # The item must have least_buy_orders buy orders now
         'normal_card': {
             'lowest_price': None,  # Type: float; The normal card selling price must above the lowest_price
             'highest_price': None  # Type: float; The normal card selling price must lower than the highest_price
@@ -57,6 +59,7 @@ class Config(object):
 
     __CONFIG_TYPE = {  # The config params type
         'debug': (bool,),
+        'proxy': (str,),
         'mobile_confirmation': (bool,),
         'language': (str,),
         'steam_login_secure': (str,),
@@ -175,6 +178,18 @@ class Config(object):
         """
 
         self.debug: bool = config_data.get('debug', False)
+
+        proxy: str = config_data.get('proxy', '')
+        if proxy != '':
+            if not re.match(r'http|socks5|https://.*', proxy):
+                raise ConfigFileErrorException('Key: proxy is in a wrong format')
+            else:
+                self.proxy = {
+                    'http': proxy,
+                    'https': proxy
+                }
+        else:
+            self.proxy = {}
 
         self.mobile_confirmation: bool = config_data.get('mobile_confirmation', False)
 
@@ -336,3 +351,5 @@ class ConfigFileErrorException(Exception):
 class KeyNotConfigException(Exception):
     """The must config not set"""
 
+
+config = Config()

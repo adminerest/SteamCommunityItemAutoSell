@@ -2,6 +2,7 @@ import requests
 from time import sleep
 from logging import getLogger
 from threading import Lock
+from config import config
 
 
 logger = getLogger(__name__)
@@ -20,7 +21,7 @@ def __requests_request(**kwargs) -> requests.Response:
     _lock = Lock()
     for _ in range(10):
         try:
-            rp = session.request(timeout=10, **kwargs)
+            rp = session.request(timeout=10, proxies=config.proxy, **kwargs)
             if rp.status_code != 429:  # 429发生后大概5分钟左右结束限制
                 if _lock.locked():
                     _lock.release()

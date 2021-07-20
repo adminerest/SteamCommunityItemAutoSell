@@ -1,4 +1,4 @@
-from config import Config
+from config import config
 from steam.api import get_wallet_fee_info
 import logging
 from logging import handlers
@@ -19,8 +19,6 @@ log_format = '%(asctime)s - %(levelname)s Thread: %(threadName)s Message: %(mess
 stream_handler.setFormatter(logging.Formatter(log_format))
 
 logging.basicConfig(level=logging.NOTSET, handlers=(stream_handler, time_handler_info))
-
-config = Config()
 
 
 if config.debug:

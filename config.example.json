@@ -1,5 +1,6 @@
 {
     "debug": false,
+    "proxy": "",
     "language": "english",
     "steam_login_secure": "",
     "steam_id": "",
