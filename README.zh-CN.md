@@ -1,9 +1,11 @@
 # SteamCommunityItemAutoSell
 [![Steam Profile](https://img.shields.io/badge/Steam-adminerest-blue.svg?logo=steam)](https://steamcommunity.com/profiles/76561198139305147/) [![Keylol Profile](https://img.shields.io/badge/Keylol-adminerest-blue.svg?logo=steam)](https://keylol.com/suid-1467452)   
 
-[![Version](https://img.shields.io/badge/Version-beta1.0.0-green.svg?logo=github)](https://github.com/adminerest/SteamCommunityItemAutoSell)   
+[![Version](https://img.shields.io/badge/Version-beta1.1.0-green.svg?logo=github)](https://github.com/adminerest/SteamCommunityItemAutoSell/releases)   
 
 [![README.en-US](https://img.shields.io/badge/README-English-yellow.svg?logo=github)](https://github.com/adminerest/SteamCommunityItemAutoSell/blob/master/README.md) [![README.zh-CN](https://img.shields.io/badge/README-中文-yellow.svg?logo=github)](https://github.com/adminerest/SteamCommunityItemAutoSell/blob/master/README.zh-CN.md)
+
+[![AlipayDonation](https://img.shields.io/badge/支持作者-支付宝-red.svg?logo=alipay)](https://github.com/adminerest/SteamCommunityItemAutoSell/blob/master/donation/alipay.JPG) [![WechatDonation](https://img.shields.io/badge/支持作者-微信-red.svg?logo=wechat)](https://github.com/adminerest/SteamCommunityItemAutoSell/blob/master/donation/wechat.JPG)
  - - -   
 ## 简介
 本脚本用于自动上架Steam社区物品到Steam市场
