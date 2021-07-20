@@ -6,6 +6,7 @@ from steam.exceptions import *
 from common.common import parse_datetime
 from wallet import Wallet
 import logging
+from urllib.parse import quote
 
 
 logger = logging.getLogger(__name__)
@@ -182,7 +183,7 @@ def get_item_nameid(appid: int, market_hash_name: str) -> int:
     :rtype int
     :raises (UnknownSteamErrorException, RequestException)
     """
-    url = 'https://steamcommunity.com/market/listings/%d/%s' % (appid, market_hash_name)
+    url = 'https://steamcommunity.com/market/listings/%d/%s' % (appid, quote(market_hash_name))
     rp = requests_get(url=url)
     if rp.status_code != 200:
         logger.error("Error when getting item_nameid")

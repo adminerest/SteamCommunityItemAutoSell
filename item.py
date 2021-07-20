@@ -105,21 +105,21 @@ class Item(object):
         if self.category['item_class']['internal_name'] == 'item_class_2':
             if self.category['cardborder']['internal_name'] == 'cardborder_0':
                 if (config.price_setting['normal_card']['lowest_price'] is not None and
-                    self.price.sell_price < config.price_setting['lowest_price']) or \
+                    self.price.sell_price < config.price_setting['normal_card']['lowest_price']) or \
                         (config.price_setting['normal_card']['highest_price'] is not None and
-                         self.price.sell_price > config.price_setting['highest_price']):
+                         self.price.sell_price > config.price_setting['normal_card']['highest_price']):
                     return False
             if self.category['cardborder']['internal_name'] == 'cardborder_1':
                 if (config.price_setting['foil_card']['lowest_price'] is not None and
-                    self.price.sell_price < config.price_setting['lowest_price']) or \
+                    self.price.sell_price < config.price_setting['foil_card']['lowest_price']) or \
                         (config.price_setting['foil_card']['highest_price'] is not None and
-                         self.price.sell_price > config.price_setting['highest_price']):
+                         self.price.sell_price > config.price_setting['foil_card']['highest_price']):
                     return False
         else:
             if (config.price_setting['other_item']['lowest_price'] is not None and
-                self.price.sell_price < config.price_setting['lowest_price']) or \
+                self.price.sell_price < config.price_setting['other_item']['lowest_price']) or \
                     (config.price_setting['other_item']['highest_price'] is not None and
-                     self.price.sell_price > config.price_setting['highest_price']):
+                     self.price.sell_price > config.price_setting['other_item']['highest_price']):
                 return False
         return True
 
