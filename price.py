@@ -37,8 +37,10 @@ class Price(object):
         """
         highest_buy_price = self.item_price_graph['highest_buy_order']
         lowest_sell_price = self.item_price_graph['lowest_sell_order']
-        total_buy_orders = self.item_price_graph['buy_order_graph'][-1][1]
-        total_sell_orders = self.item_price_graph['sell_order_graph'][-1][1]
+        total_buy_orders = self.item_price_graph['buy_order_graph'][-1][1] \
+            if self.item_price_graph['buy_order_graph'] else 0
+        total_sell_orders = self.item_price_graph['sell_order_graph'][-1][1] \
+            if self.item_price_graph['sell_order_graph'] else 0
 
         def get_history_sales_num(hours: int) -> int:
             if not isinstance(hours, (int, float)) or hours < 0 or hours > 999999:
@@ -114,4 +116,3 @@ class CalculationFormulaWrongException(Exception):
 
 class ItemCantSellException(Exception):
     """The item not meet the config setting"""
-
