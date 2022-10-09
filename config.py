@@ -27,7 +27,7 @@ class Config(object):
     }
     disallow_to_sell_item_detail = {
         'enable': False,
-        'item_detail_type': set()  # Type: sstr
+        'item_detail_type': set()  # Type: str
     }
     price_setting = {
         'lowest_price': None,  # Type: float; The item selling price must above the lowest_price
@@ -195,11 +195,13 @@ class Config(object):
 
         self.language: str = config_data.get('language', 'english')
 
-        self.steam_login_secure: str = config_data.get('steam_login_secure', '').upper().replace('%7C', '|')
+        self.steam_login_secure: str = config_data.get('steam_login_secure', '').replace('%7C', '|').replace('%7c', '|')
 
         self.steam_id: str = config_data.get('steam_id', '')
         if len(self.steam_id) != 17:
             raise ConfigFileErrorException('Key: steam_id is in a wrong format')
+        if self.steam_id != self.steam_login_secure.split('|')[0]:
+            raise ConfigFileErrorException("Key: steam_id and steam_login_secure can't match")
 
         self.app_id: int = config_data.get('app_id', 753)
         self.context_id: str = config_data.get('context_id', 6)
